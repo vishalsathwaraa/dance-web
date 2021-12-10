@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Navbar from "./component/Navbar";
 import { Switch, Route } from "react-router-dom";
 import AOS from "aos";
@@ -18,9 +18,7 @@ const App = () => {
   }, []);
   return (
     <div style={{ textAlign: "center" }}>
-
       <Navbar />
-      
       <Switch>
         <Route path="/videos">
           <Videos />
@@ -41,8 +39,17 @@ const App = () => {
           <Home />
         </Route>
       </Switch>
-
-      {location.pathname !== "/home" && location.pathname !== "/" && <Footer />}
+      {location.pathname !== "/home" && location.pathname !== "/" && (
+        <Suspense
+          fallback={
+            <div class="flex bg-black h-screen justify-center items-center">
+              <div class="animate-spin rounded-full h-20 w-20 border-b-2 border-white-900"></div>
+            </div>
+          }
+        >
+          <Footer />
+        </Suspense>
+      )}
     </div>
   );
 };

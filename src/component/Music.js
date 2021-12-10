@@ -127,7 +127,7 @@ const Music = () => {
         <div className="music-container relative w-full flex flex-col top-28 justify-center items-center">
           {/*------------ Cover Art ------------------ */}
           <div
-            className="coverart rounded-3xl relative top-3 w-72 h-72 overflow-hidden sm:w-60 sm:h-60"
+            className="coverart rounded-3xl relative top-3 w-72 h-72 overflow-hidden sm:w-56 sm:h-56"
             data-aos="zoom-in"
             data-aos-duration="1000"
           >
@@ -140,7 +140,7 @@ const Music = () => {
 
           {/*------------ Music Details ------------------ */}
           <div
-            className="relative top-3 music-details sm:top-10"
+            className="relative top-3 music-details sm:top-2"
             data-aos="fadeIn"
             data-aos-duration="1000"
             data-aos-delay="300"
@@ -155,7 +155,7 @@ const Music = () => {
 
           {/*------------ Playlist and like button ------------------ */}
           <div
-            className="relative w-2/6 sm:w-3/5  top-12 px-2  sm:top-24 flex justify-between items-center"
+            className="relative w-2/6 sm:w-3/5  top-12 px-2  sm:top-10 flex justify-between items-center"
             // data-aos="zoom-in"
             // data-aos-duration="1000"
             // data-aos-delay="300"
@@ -167,7 +167,7 @@ const Music = () => {
           </div>
           {/*------------ Music Progress Bar ------------------ */}
           <div
-            className="relative w-full top-20 sm:top-40 flex justify-center items-center"
+            className="relative w-full top-20 sm:top-18 flex justify-center items-center"
             // data-aos="zoom-in"
             // data-aos-duration="1000"
             // data-aos-delay="300"
@@ -191,7 +191,7 @@ const Music = () => {
             </span>
           </div>
           {/*------------ Music Play/Pause Button ------------------ */}
-          <div className="relative w-3/12 sm:w-2/4 top-24 sm:top-56 flex justify-between items-center">
+          <div className="relative w-3/12 sm:w-2/4 top-24 sm:top-32 flex justify-between items-center">
             <span onClick={() => previousTrack()}>
               <Previous />
             </span>
