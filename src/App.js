@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Navbar from "./component/Navbar";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";

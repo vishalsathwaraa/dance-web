@@ -1,7 +1,6 @@
 import React from "react";
 import {
   FaEnvelope,
-  FaFacebook,
   FaInstagram,
   FaLinkedin,
   FaPhone,

@@ -3,10 +3,8 @@ import {
   Previous,
   Next,
   Play,
-  Playlist,
   Like,
   Pause,
-  Close,
   SongList,
 } from "../svg/MediaButtons";
 import { musicData } from "../musicData";
