@@ -6,6 +6,20 @@ module.exports = {
       colors: {
         "footer-bg": "#6d6a6a66",
       },
+      keyframes: {
+        modal: {
+            '0%': {
+               opacity:'0'
+            },
+            '100%': {
+               opacity:'1'
+
+            },
+        }
+    },
+    animation: {
+        modal: 'modal .5s ease-in',
+    }
     },
 
     screens: {

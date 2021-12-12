@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Services = () => {
+  const [showBanner, setShowBanner] = useState(false);
+  useEffect(() => {
+    const listener = (e) => {
+      console.log(e.target.classList.contains("banner"));
+      if (!e.target.classList.contains("z-10")) {
+        setShowBanner(false);
+      } else {
+        setShowBanner(true);
+      }
+    };
+      document.addEventListener("mousedown", listener);
+    return () => {
+      document.removeEventListener("mousedown", listener);
+    };
+  }, []);
   return (
     <section className="w-full pb-10" style={{ backgroundColor: "#1e1e1e" }}>
       {/* HEADING */}
+      {showBanner && (
+        <div className="absolute left-1/2 top-1/2 w-2/6 sm:w-11/12 z-10 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden  animate-modal">
+          <img src="../images/services/banner.jpg" alt="" className="z-10"  />
+        </div>
+      )}
 
       <div className="relative sm:px-10">
         <div
@@ -13,9 +33,14 @@ const Services = () => {
         >
           <h2 className="text-4xl text-yellow-600 pb-6">Services</h2>
           <span className="text-red-50 text-lg sm:text-base">
-            New Music Production And Dance Batch will Start from this March.{" "}
-            <br /> So make sure to register yourself if you are intrested and
-            want to learn new your skills.
+            New Dance Batch will Start from 1st of January. <br /> Make sure to
+            register yourself if you are intrested {" "}
+            <span
+              className="cursor-pointer text-yellow-500 italic"
+              onClick={() => setShowBanner(true)}
+            >
+              Click For More Details
+            </span>
           </span>
           <div className="w-full flex justify-center py-10">
             <hr className="w-20 text-center rounded-full border-2" />
@@ -39,8 +64,7 @@ const Services = () => {
               </header>
               <p className="py-2 text-red-50">
                 Learn and Groove your feet with different dance styles including
-                Popping , Tutting Hip-Hop , Bollywood Breaking , Urban and Old
-                School
+                Popping , Tutting , Hip-Hop , Bollywood , Urban and Old School
               </p>
             </div>
 

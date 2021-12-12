@@ -9,25 +9,28 @@ const Home = () => {
       image: "/images/home/1.png",
       title: "Beatmaker",
       explore: "Explore Music",
+      link:"/musicplayer",
       count: "01",
     },
     {
       image: "/images/home/2.jpg",
       title: "Dancer",
       explore: "Explore Video",
+      link:"/videos",
       count: "02",
     },
     {
       image: "/images/home/3.png",
       title: "Garba Lover",
       explore: "Explore Video",
+      link:"/videos",
       count: "03",
     },
   ];
   return (
     <>
       <Slider infinite={true} className="slider-wrapper">
-        {slides.map(({ image, title, count, explore }, index) => (
+        {slides.map(({ image, title, count, explore, link }, index) => (
           <div key={index}>
             <div
               className="flex items-center  translate-y-2/4 absolute
@@ -44,7 +47,7 @@ const Home = () => {
                 >
                   {title}
                 </p>
-                <Link to="/musicplayer">
+                <Link to={link}>
                   <p className="text-lg text-center sm:mx-10  mx-60 w-48 bg-black  rounded-full px-8 py-3 text-white  tracking-wide  hover:bg-white hover:shadow-lg hover:text-gray-900 transition duration-300  ease-linear transform hover:scale-105">
                     {explore}
                   </p>
