@@ -73,7 +73,7 @@ const Footer = () => {
           <p className="font-bold uppercase">Email</p>
           <div className="flex mt-3 sm:mt-1 text-left leading-8 ">
             <div className="flex leading-8">
-              <a href="/" className="flex items-center hover-animate">
+              <a href="mailto:vishalsathwara999@gmail.com" className="flex items-center hover-animate">
                 <FaEnvelope />
                 <span className="ml-3 tracking-wider">
                   vishalsathwara999@gmail.com
@@ -86,7 +86,7 @@ const Footer = () => {
           <p className="font-bold uppercase">Contact</p>
           <div className="flex leading-8">
             <a
-              href="/"
+              href="tel:+919898571874"
               className="flex items-center mt-3 sm:mt-1 hover-animate"
             >
               <FaPhone />

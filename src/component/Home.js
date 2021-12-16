@@ -2,6 +2,8 @@ import React from "react";
 import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Home = () => {
   const slides = [
@@ -9,21 +11,21 @@ const Home = () => {
       image: "/images/home/1.png",
       title: "Beatmaker",
       explore: "Explore Music",
-      link:"/musicplayer",
+      link: "/musicplayer",
       count: "01",
     },
     {
       image: "/images/home/2.jpg",
       title: "Dancer",
       explore: "Explore Video",
-      link:"/videos",
+      link: "/videos",
       count: "02",
     },
     {
       image: "/images/home/3.png",
       title: "Garba Lover",
       explore: "Explore Video",
-      link:"/videos",
+      link: "/videos",
       count: "03",
     },
   ];
@@ -37,7 +39,7 @@ const Home = () => {
                            content-center flex-wrap my-72 w-screen sm:flex-col "
             >
               {/* content 1 */}
-              <div className="flex flex-col flex-1 text-justify">
+              <div className="flex flex-col flex-1 z-10 text-justify">
                 <p className="mb-6 mx-60 sm:mx-10 text-lg w-max text-white tracking-widest uppercase">
                   vishal sathwara
                 </p>
@@ -54,15 +56,17 @@ const Home = () => {
                 </Link>
               </div>
               {/* content 2*/}
-              <div className="flex-1 mx-5 text-lg ele text-white  tracking-wide">
+              <div className="flex-1 mx-5 text-lg z-10 text-white  tracking-wide">
                 <sub className="text-6xl font-bold"> {count}</sub>{" "}
                 <span className="text-xl">/ 03</span>
               </div>
             </div>
-            <img
-              src={`${image}`}
+            <LazyLoadImage
+              effect="blur"
+              src={image}
+              width={`${100}%`}
               alt=""
-              className="w-full h-screen object-cover"
+              className="w-full h-screen -z-1 object-cover"
             />
           </div>
         ))}

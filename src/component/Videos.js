@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ModalVideo from "react-modal-video";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "../style/modal-video.min.css";
 
 const Videos = () => {
@@ -67,7 +69,7 @@ const Videos = () => {
         </div>
 
         {/* Gird Data */}
-        <div className="grid grid-cols-3 px-48 p-14 2xl:px-28 sm:px-14 sm:grid-cols-1 md:px-20 gap-14">
+        <div className="grid grid-cols-3 min-h-full px-48 p-14 2xl:px-28 sm:px-14 sm:grid-cols-1 md:px-20 gap-14">
           {filterData.map(({ img, id }, index) => (
             <div
               key={id}
@@ -77,7 +79,7 @@ const Videos = () => {
               className="flex items-center justify-center"
             >
               <img
-                className="absolute z-20 w-4/12 cursor-pointer ointer"
+                className="absolute z-20 w-4/12 cursor-pointer"
                 src="/images/video/play.png"
                 alt="play"
                 onClick={() => {
@@ -85,8 +87,7 @@ const Videos = () => {
                   setId(id);
                 }}
               />
-
-              <img src={`${img}`} alt="" className="z-10 rounded-2xl" />
+              <LazyLoadImage src={img}  effect="blur" alt={img} className="rounded-2xl" />
             </div>
           ))}
         </div>

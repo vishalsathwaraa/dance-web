@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { ImageLoader } from "./Loader";
 
 const Services = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -11,7 +14,7 @@ const Services = () => {
         setShowBanner(true);
       }
     };
-      document.addEventListener("mousedown", listener);
+    document.addEventListener("mousedown", listener);
     return () => {
       document.removeEventListener("mousedown", listener);
     };
@@ -21,7 +24,12 @@ const Services = () => {
       {/* HEADING */}
       {showBanner && (
         <div className="absolute left-1/2 top-1/2 w-2/6 sm:w-11/12 z-10 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden  animate-modal">
-          <img src="../images/services/banner.jpg" alt="" className="z-10"  />
+          <LazyLoadImage
+            effect="blur"
+            src="../images/services/banner.jpg"
+            alt=""
+            className="z-10"
+          />
         </div>
       )}
 
@@ -34,7 +42,7 @@ const Services = () => {
           <h2 className="text-4xl text-yellow-600 pb-6">Services</h2>
           <span className="text-red-50 text-lg sm:text-base">
             New Dance Batch will Start from 1st of January. <br /> Make sure to
-            register yourself if you are intrested {" "}
+            register yourself if you are intrested{" "}
             <span
               className="cursor-pointer text-yellow-500 italic"
               onClick={() => setShowBanner(true)}
@@ -51,10 +59,11 @@ const Services = () => {
         <div className="relative mt-32 mb ">
           <div className="px-52 mt-2 flex items-center justify-around  flex-wrap  w-full  sm:px-2">
             <div className=" w-80 h-auto top-4">
-              <img
+              <LazyLoadImage
                 data-aos="fade-right"
                 data-aos-duration="1000"
                 data-aos-delay="300"
+                placeholder={<ImageLoader />}
                 src="/images/services/dancer.png"
                 className="object-cover w-3/4 mx-4"
                 alt="dncer"
@@ -78,10 +87,10 @@ const Services = () => {
                 alt="dncer"
               />
 
-              <header className="py-4 pt-4 text-xl tracking-wide text-yellow-500">
+              <header className="pt- pt-10 text-xl tracking-wide text-yellow-500">
                 Garba Classes
               </header>
-              <p className="py-2 text-red-50">
+              <p className="py- pt-7 text-red-50">
                 Learn Basic to Advance level Garba steps including be taali
                 garba (2-clap garba), tran taali garba (3-clap garba), raas,
                 hinch, dodhiya and many more.
@@ -101,9 +110,9 @@ const Services = () => {
                 Wedding Choreography
               </header>
               <p className=" text-red-50 relative top-5">
-                Your Wedding Celebrations will remain incomplete without dance
-                and music.so don't make it boring and Contact us for Solo,Group
-                and Couple Dance Choreography.
+                Your Wedding Celebrations will remain incomplete without dancing
+                and Music.Leave the medley creation to us and we’ll help you
+                with the songs also.
               </p>
             </div>
           </div>
@@ -123,11 +132,10 @@ const Services = () => {
               <header className="py-4 text-xl tracking-wide text-yellow-500">
                 Music Production
               </header>
-              <p className="py-2 text-red-50">
-                Learn music production with the latest technology using
-                Flstudio.I'll teach you basic piano skills,how to create
-                melody,various plugins and Vst's,make your own beat from Scratch
-                and many more.
+              <p className="py-2 text-red-50 sm:w-44">
+                Learn fundamentals of music production using Flstudio, Basic
+                Piano lessons, Create melody with wide range of plugins and make
+                your own beat from scratch and many more.
               </p>
             </div>
             <div className="mt-8 w-44">
@@ -143,9 +151,8 @@ const Services = () => {
                 Song Remix
               </header>
               <p className="py-6 text-red-50">
-                Remix any type of song very quickly and easily with
-                flstudio.Also learn various sampling techniques and chopping of
-                vocals.
+                Remix songs with base patterns and learn different sampling
+                techniques.
               </p>
             </div>
           </div>

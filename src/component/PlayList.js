@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { musicData } from "../musicData";
 import { Close } from "../svg/MediaButtons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { ImageLoader } from "./Loader";
 const PlayList = ({
   setCurrentIndex,
   currentIndex,
@@ -46,9 +49,10 @@ const PlayList = ({
               onClick={() => onSongChange(music.id)}
             >
               <div className="box w-20 h-20 sm:w-20 sm:h-20 overflow-hidden">
-                <img
-                  src={`${music.cover}`}
-                  alt=""
+                <LazyLoadImage
+                  src={music.cover}
+                  effect="blur"
+                  alt={music.cover}
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>

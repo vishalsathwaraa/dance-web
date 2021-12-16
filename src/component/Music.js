@@ -9,6 +9,8 @@ import {
 } from "../svg/MediaButtons";
 import { musicData } from "../musicData";
 import PlayList from "./PlayList";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Music = () => {
   //state
@@ -26,9 +28,8 @@ const Music = () => {
   //useEffect
 
   useEffect(() => {
-    console.log("load");
     audioPlayer.current.onloadedmetadata = function () {
-      const second = Math.floor(audioPlayer.current.duration);
+      const second = Math.floor(audioPlayer?.current?.duration);
       setDuration(second);
       progressBar.current.max = second;
     };
@@ -131,8 +132,9 @@ const Music = () => {
             data-aos="zoom-in"
             data-aos-duration="1000"
           >
-            <img
-              src={`${musicData[currentIndex].cover}`}
+            <LazyLoadImage
+              src={musicData[currentIndex].cover}
+              effect="blur"
               alt=""
               className="relative object-cover object-center w-full h-full select-none"
             />
@@ -161,7 +163,7 @@ const Music = () => {
             // data-aos-delay="300"
           >
             <span onClick={() => setOpenPlaylist(!openPlaylist)}>
-              <SongList/>
+              <SongList />
             </span>
             <Like />
           </div>
