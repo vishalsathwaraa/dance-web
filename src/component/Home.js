@@ -23,7 +23,7 @@ const Home = () => {
     },
     {
       image: "/images/home/3.png",
-      title: "Garba Lover",
+      title: "Garba INSTRUCTOR",
       explore: "Explore Video",
       link: "/videos",
       count: "03",
@@ -44,7 +44,7 @@ const Home = () => {
                   vishal sathwara
                 </p>
                 <p
-                  className="mb-6 mx-60  sm:mx-10 text-5xl text-white w-max  font-bold uppercase leading-loose
+                  className="mb-6 mx-60  sm:mx-10 text-4xl text-white w-max  font-bold uppercase leading-loose
                              text-whitetracking-wide "
                 >
                   {title}

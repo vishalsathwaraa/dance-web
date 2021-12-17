@@ -5,10 +5,11 @@ import { ImageLoader } from "./Loader";
 
 const Services = () => {
   const [showBanner, setShowBanner] = useState(false);
+  
   useEffect(() => {
     const listener = (e) => {
       console.log(e.target.classList.contains("banner"));
-      if (!e.target.classList.contains("z-10")) {
+      if (!e.target.classList.contains("banner")) {
         setShowBanner(false);
       } else {
         setShowBanner(true);
@@ -23,12 +24,12 @@ const Services = () => {
     <section className="w-full pb-10" style={{ backgroundColor: "#1e1e1e" }}>
       {/* HEADING */}
       {showBanner && (
-        <div className="absolute left-1/2 top-1/2 w-2/6 sm:w-11/12 z-10 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden  animate-modal">
+        <div className="absolute left-1/2 top-1/2 w-2/6 sm:w-11/12 z-10 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden">
           <LazyLoadImage
             effect="blur"
             src="../images/services/banner.jpg"
             alt=""
-            className="z-10"
+            className="banner z-10"
           />
         </div>
       )}
@@ -87,10 +88,10 @@ const Services = () => {
                 alt="dncer"
               />
 
-              <header className="pt- pt-10 text-xl tracking-wide text-yellow-500">
+              <header className="pt-10 text-xl tracking-wide text-yellow-500">
                 Garba Classes
               </header>
-              <p className="py- pt-7 text-red-50">
+              <p className="pt-7 sm:pb-8 text-red-50">
                 Learn Basic to Advance level Garba steps including be taali
                 garba (2-clap garba), tran taali garba (3-clap garba), raas,
                 hinch, dodhiya and many more.
