@@ -4,7 +4,7 @@ import Link from "next/link";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const menuLink = [
-    { path: "/home", name: "Home" },
+    { path: "/", name: "Home" },
     { path: "/about", name: "About" },
     { path: "/services", name: "Services" },
     { path: "/musicplayer", name: "Music" },

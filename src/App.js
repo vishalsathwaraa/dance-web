@@ -32,14 +32,11 @@ const App = () => {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
         <Route exact path="/">
           <Home />
         </Route>
       </Switch>
-      {location.pathname !== "/home" && location.pathname !== "/" && (
+      {location.pathname !== "/" && (
         <Suspense
           fallback={
             <div class="flex bg-black h-screen justify-center items-center">

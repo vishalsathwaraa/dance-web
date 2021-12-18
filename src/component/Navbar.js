@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const menuLink = [
-    { path: "/home", name: "Home" },
+    { path: "/", name: "Home" },
     { path: "/about", name: "About" },
     { path: "/services", name: "Services" },
     { path: "/musicplayer", name: "Music" },
@@ -27,7 +27,7 @@ const Navbar = () => {
 
         <ul className="flex items-center mx-3 font-medium list-none sm:hidden">
           {menuLink.map(({ path, name }) => (
-            <NavLink to={`${path}`} key={name} activeClassName="active">
+            <NavLink exact to={`${path}`} key={name} activeClassName="active">
               <li className="mx-5 text-lg tracking-wide select-none">{name}</li>
             </NavLink>
           ))}
@@ -73,6 +73,7 @@ const Navbar = () => {
               {menuLink.map(({ path, name }) => (
                 <NavLink
                   onClick={() => setOpen(false)}
+                  exact
                   to={`${path}`}
                   key={name}
                   activeClassName="active"

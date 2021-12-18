@@ -31,6 +31,14 @@ const Home = () => {
   ];
   return (
     <>
+      {" "}
+      <video
+        className="w-full h-full object-cover absolute -z-10"
+        autoPlay
+        muted
+      >
+        <source src="/images/home/smoke.mp4" type="video/mp4" />
+      </video>
       <Slider infinite={true} className="slider-wrapper">
         {slides.map(({ image, title, count, explore, link }, index) => (
           <div key={index}>

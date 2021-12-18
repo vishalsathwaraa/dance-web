@@ -10,7 +10,9 @@
 * {
   user-select: none;
 }
-
+body{
+  background: #1e1e1e;
+}
 .slider-wrapper {
   position: absolute;
   width: 100%;
